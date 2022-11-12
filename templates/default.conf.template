@@ -4,6 +4,13 @@ server {
   
   location / {
     root /usr/share/nginx/html;
+
+    index  index.html index.htm;
+
+    # Allows to receive requests without the .html
+    try_files $uri $uri.html $uri/ =404;
+
+    include /etc/nginx/conf.d/expires.inc;
   }
   
   error_page   500 502 503 504  /50x.html;
