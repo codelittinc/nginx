@@ -11,7 +11,8 @@ server {
     try_files $uri $uri.html $uri/ =404;
   }
 
-  include /etc/nginx/conf.d/expires.inc;
+# @TODO: for some reason it breaks the css/js requests
+#  include /etc/nginx/conf.d/expires.inc;
   
   error_page   500 502 503 504  /50x.html;
   location = /50x.html {
