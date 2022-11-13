@@ -9,9 +9,9 @@ server {
 
     # Allows to receive requests without the .html
     try_files $uri $uri.html $uri/ =404;
-
-    include /etc/nginx/conf.d/expires.inc;
   }
+
+  include /etc/nginx/conf.d/expires.inc;
   
   error_page   500 502 503 504  /50x.html;
   location = /50x.html {
